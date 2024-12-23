@@ -79,6 +79,12 @@ body{
     position: fixed;
     top: 78%;
     left: 72%;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.add-button-1:active{
+    transform: scale(0.95);
 }
 
 .add-button-1 .fa-solid {
