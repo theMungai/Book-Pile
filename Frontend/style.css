@@ -181,6 +181,7 @@ input[type="number"] {
 .user-input img {
     width: 30px;
     font-weight: 600;
+    cursor: pointer;
 }
 
 
