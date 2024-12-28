@@ -13,12 +13,14 @@
     --vibrant-turquoise : #16E1D9;
     --soft-blue : #74C2F1;
     --medium-dark : rgba(88,85,85,0.1);
+    --dialog-background :#232532;
 }
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* outline: 2px solid red; */
 }
 
 body{
@@ -54,6 +56,11 @@ body{
 
 .header .pile-header {
     color: var(--sky-blue);
+}
+
+.header img{
+    width: 30px;
+    cursor: pointer;
 }
 
 .books-field{
@@ -94,4 +101,166 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     color: var(--purple-gray);
+}
+
+
+.popup-container{
+    background-color: var(--popup-background);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+.popup-dialog{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 540px;
+    height: 340px;
+    background-color: var(--dialog-background);
+    border-radius: 20px;
+}
+
+.user-input{
+    width: 80%;
+    background-color: var(--input-background);
+    color: var(--grayish-blue);
+    border-bottom: 2px solid var(--sky-blue);
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+}
+
+.user-input input {
+    width: 85%;
+    background-color: transparent;
+    color: var(--grayish-blue);
+    font-size: 1rem;
+    border:none;
+    padding: 15px;
+}
+
+.user-input input:focus{
+    border: none;
+    outline: none;
+}
+
+.user-input input::placeholder{
+    color: var(--grayish-blue);
+    font-size: 1rem;
+}
+
+/* ==============Removing spin arrows in number input */
+
+/* For Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  /* For Webkit-based browsers (Chrome, Safari, Opera) */
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* ===================================================== */
+
+.user-input .next-button{
+    background-color: transparent;
+    border: none;
+}
+
+.user-input img {
+    width: 30px;
+    font-weight: 600;
+}
+
+
+.confirm-status{
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+}
+
+.confirm-status p {
+    color: var(--grayish-blue);
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.yes-no{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 35px auto;
+    width: 80%;
+    
+}
+
+.yes-no .yes-btn {
+    background-color: rgba(54, 181, 122, 0.603);
+    color: rgba(255, 255, 255, 0.699);
+    font-size: 20px;
+    border: none;
+    padding: 8px 35px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.yes-no .yes-btn:hover{
+    background-color: transparent;
+    color: var(--minty-green);
+    border: 1px solid var(--minty-green);
+}
+
+.yes-no .no-btn{
+    background-color:rgba(181, 73, 54, 0.61);
+    color: var(--dialog-background);
+    font-size: 20px;
+    border: none;
+    padding: 8px 35px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.yes-no .no-btn:hover{
+    background-color: transparent;
+    color: var(--red-brown);
+    border: 1px solid var(--red-brown);
+}
+
+.confirm-button{
+    margin: 40px auto;
+    width: 50%;
+}
+
+.add-to-pile{
+    width: 100%;
+    background-color: transparent;
+    color: var(--sky-blue);
+    padding: 10px 35px;
+    font-size: 20px;
+    border-radius: 10px;
+    border:1px solid var(--sky-blue) ;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.add-to-pile:hover{
+    background-color: var(--sky-blue);
+    color: var(--dialog-background);
+    border: none;
 }
