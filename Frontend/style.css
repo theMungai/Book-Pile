@@ -173,17 +173,36 @@ input[type="number"] {
 
   /* ===================================================== */
 
-.user-input .next-button{
-    background-color: transparent;
+.next-button{
+    background-color: var(--input-background);
+    width: 50px;
+    height: 50px;
     border: none;
+    border-radius: 50%;
+    position: absolute;
+    top: 80%;
+    right: 5%;
 }
 
-.user-input img {
-    width: 30px;
-    font-weight: 600;
-    cursor: pointer;
+.next-button a,
+.prev-button a{
+    color: var(--grayish-blue);
+    font-size: 2.5rem;
+    text-decoration: none;
+    padding: 8px 16px;
+    margin: 0px auto;
 }
 
+.prev-button{
+    background-color: var(--input-background);
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    top: 80%;
+    left: 5%;
+}
 
 .confirm-status{
     width: 80%;
