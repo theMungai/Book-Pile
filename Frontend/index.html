@@ -24,69 +24,49 @@
     </div>
 
     <div class="popup-container">
-        <div class="popup-dialog" id="title">
-            <div class="book-title-container">
+        <div class="popup-dialog">
+            <div class="book-title-container content">
                 <div class="user-input">
-                    <input type="text" placeholder="Title of the Book...">    
+                    <input type="text" class="user-value" placeholder="Title of the Book...">
+                    <p class="error-message"></p>    
                 </div>
-                
+    
+                <button class="next-button">
+                        <i class="fa-solid fa-circle-chevron-right"></i>
+                </button>
             </div>
         
-            <button class="next-button">
-                <a href="">
-                    <i class="fa-solid fa-circle-chevron-right"></i>
-                </a>
-            </button>
-        </div>
-
-
-        <div class="popup-dialog" id="author">
-            <div class="author-container">
+            <div class="author-container content">
                 <div class="user-input">
-                    <input type="text" placeholder="Author...">  
-                    <button class="next-button">
-                    </button>
-                    
+                    <input type="text" class="user-value" placeholder="Author...">
+                    <p class="error-message"></p>       
                 </div>
                 
-            </div>
-
-            <button class="prev-button">
-                <a href="">
+                <button class="prev-button">
                     <i class="fa-solid fa-circle-chevron-left"></i>
-                </a>
-            </button>
-        
-            <button class="next-button">
-                <a href="">
+                </button>
+            
+                <button class="next-button">
                     <i class="fa-solid fa-circle-chevron-right"></i>
-                </a>
-            </button>
-        </div>
-
-        <div class="popup-dialog" id="pages">
-            <div class="page-number-container">
-                <div class="user-input">
-                    <input type="number" placeholder="Number of Pages...">      
-                </div>
-                
+                </button>
             </div>
 
-            <button class="prev-button">
-                <a href="">
+            <div class="page-number-container content">
+                <div class="user-input">
+                    <input type="number" class="user-value" placeholder="Number of Pages...">
+                    <p class="error-message"></p>       
+                </div>
+                
+                <button class="prev-button">
                     <i class="fa-solid fa-circle-chevron-left"></i>
-                </a>
-            </button>
-        
-            <button class="next-button">
-                <a href="">
+                </button>
+            
+                <button class="next-button">
                     <i class="fa-solid fa-circle-chevron-right"></i>
-                </a>
-            </button>
-        </div>
-
-        <div class="popup-dialog" id="confirm">
-            <div class="confirm-status">
+                </button>
+            </div>
+            
+            <div class="confirm-status content">
                 <p>Have you read this book?</p>
                 <div class="yes-no">
                     <button class="yes-btn">Yes</button>
@@ -96,17 +76,12 @@
                 <div class="confirm-button">
                     <button class="add-to-pile">Add Book</button>
                 </div>
-            </div>
 
-            <button class="prev-button">
-                <a href="">
+                <button class="prev-button">
                     <i class="fa-solid fa-circle-chevron-left"></i>
-                </a>
-            </button>
-
-        </div>
-            
-        
+                </button>
+            </div>
+        </div>   
     </div>
 
     <script src="script.js"></script>

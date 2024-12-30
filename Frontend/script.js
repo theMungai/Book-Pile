@@ -1,21 +1,27 @@
-const bookTitle = document.querySelector("#title");
-const authorContainer = document.querySelector("#author");
-const pageNumber = document.querySelector("#pages");
-const confirmBox = document.querySelector("#confirm");
 
-const inputSlider = [bookTitle,authorContainer,pageNumber,confirmBox];
-let currentInput = inputSlider[0]
+// Show Popup Dialog
+const popup = document.querySelector(".popup-container")
 
-const nextButton = document.querySelectorAll(".next-button");
-const prevButton = document.querySelector(".prev-button");
-
-nextButton.forEach((next) => {
-    next.addEventListener("click", () => {
-        nextInput()
-     });
-})
-
-
-function nextInput(){
-    currentInput = inputSlider[1]
+function showPopUp(){
+    popup.style.display = "block"
 }
+
+document.querySelector(".add-button-1").addEventListener("click", () => {
+    showPopUp()
+});
+
+
+// If the field is not filled, show error message
+const userInputs = document.querySelectorAll(".user-value");
+const inputContainer = document.querySelectorAll(".user-input");
+
+userInputs.forEach((input) => {
+    inputContainer.forEach((container) => {
+        const errorMessage = container.querySelector(".error-message");
+
+        if(input.value === ""){
+            errorMessage.style.display = "block";
+            errorMessage.textContent = "This field is required"
+        }
+    })
+})

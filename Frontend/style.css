@@ -111,10 +111,7 @@ body{
     position: absolute;
     top: 0%;
     left: 0%;
-    display: flex;
-    justify-content: center;
-    column-gap:1rem;
-    overflow: hidden;
+    display: none
 }
 
 .popup-dialog{
@@ -126,6 +123,7 @@ body{
     height: 340px;
     background-color: var(--dialog-background);
     border-radius: 20px;
+    border: 2px solid red;
 }
 
 .user-input{
@@ -138,8 +136,6 @@ body{
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    display: flex;
-    align-items: center;
 }
 
 .user-input input {
@@ -161,6 +157,12 @@ body{
     font-size: 1rem;
 }
 
+.error-message{
+    color: red;
+    font-size: 0.9rem;
+    opacity: 0;
+}
+
 /* ==============Removing spin arrows in number input */
 
 /* For Firefox */
@@ -168,16 +170,17 @@ input[type="number"] {
     -moz-appearance: textfield;
   }
 
-  /* For Webkit-based browsers (Chrome, Safari, Opera) */
-  input[type="number"]::-webkit-outer-spin-button,
-  input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
+/* For Webkit-based browsers (Chrome, Safari, Opera) */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
 
-  /* ===================================================== */
+/* ===================================================== */
 
 .next-button{
+    cursor: pointer;
     background-color: transparent;
     border: none;
     position: absolute;
@@ -185,16 +188,14 @@ input[type="number"] {
     right: 5%;
 }
 
-.next-button a,
-.prev-button a{
+.popup-dialog .fa-solid{
     color: var(--input-background);
     font-size: 2.5rem;
-    text-decoration: none;
-    padding: 8px 16px;
-    margin: 0px auto;
+    border-radius: 50%;
 }
 
 .prev-button{
+    cursor: pointer;
     background-color: transparent;
     border: none;
     position: absolute;
@@ -215,6 +216,11 @@ input[type="number"] {
     color: var(--grayish-blue);
     font-size: 1.2rem;
     text-align: center;
+}
+
+.disabled{
+    cursor: not-allowed;
+    background-color: var(--grayish-blue);
 }
 
 .yes-no{
