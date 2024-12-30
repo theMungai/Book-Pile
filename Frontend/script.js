@@ -20,7 +20,7 @@ userInputs.forEach((input) => {
         const errorMessage = container.querySelector(".error-message");
 
         if(input.value === ""){
-            errorMessage.style.display = "block";
+            errorMessage.style.opacity = 1;
             errorMessage.textContent = "This field is required"
         }
     })
