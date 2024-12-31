@@ -5,11 +5,11 @@ const dialogs = document.querySelectorAll(".popup-dialog");
 
 function showPopUp(){
     popup.style.display = "block";
-    dialogs[0].style.display = "block"
 }
 
 document.querySelector(".add-button-1").addEventListener("click", () => {
     showPopUp()
+    initializeSlide()
 });
 
 
@@ -40,17 +40,41 @@ document.querySelector(".add-button-1").addEventListener("click", () => {
 const nextButtons = document.querySelectorAll(".next-button");
 nextButtons.forEach((next) => {
     next.addEventListener("click", () => {
-        dialogs[1].style.display = "block";
-        dialogs[0].style.display = "none";
+        // dialogs[1].style.display = "block";
+        // dialogs[0].style.display = "none";
+        nextSlide()
     })
 })
 
 
+let currentSlide = 0;
 // Previous Button Functionality
 const prevButtons = document.querySelectorAll(".prev-button");
 prevButtons.forEach((prev) => {
     prev.addEventListener("click", () => {
         dialogs[1].style.display = "none";
         dialogs[0].style.display = "block";
-    })
+    });
+    
 })
+
+
+function initializeSlide(){
+    dialogs[currentSlide].classList.add("displaySlide")
+}
+
+function showSlide(index){
+    dialogs.forEach((dialog) => {
+        dialog.classList.remove("displaySlide")
+    });
+    dialogs[currentSlide].classList.add("displaySlide");
+}
+
+function nextSlide(){
+    currentSlide ++;
+    showSlide(currentSlide)
+}
+
+function prevSlide(){
+
+}
