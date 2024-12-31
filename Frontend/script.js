@@ -71,4 +71,7 @@ prevButtons.forEach((prev) => {
         prevSlide()
     });
     
-})
+});
+
+// Toggling Light and Dark Theme Buttons
+

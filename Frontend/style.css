@@ -63,6 +63,10 @@ body{
     cursor: pointer;
 }
 
+.dark-theme {
+    display: none;
+}
+
 .books-field{
     height: 70vh;
     background-color: var(--medium-dark);
@@ -180,7 +184,7 @@ body{
 }
 
 .error-message{
-    color: red;
+    color: var(--red-brown);
     font-size: 0.9rem;
     opacity: 0;
     position: absolute;
