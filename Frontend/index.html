@@ -47,11 +47,12 @@
             
             <div class="popup-dialog">
                 <div class="author-container content">
-                    <div class="user-input">
-                        <input type="text" class="user-value" placeholder="Author...">    
+                    <div class="input-container">
+                        <div class="user-input">
+                            <input type="text" class="user-value" placeholder="Author...">    
+                        </div>
+                        <p class="error-message"></p> 
                     </div>
-                    <p class="error-message"></p> 
-                    
                     <button class="prev-button">
                         <i class="fa-solid fa-circle-chevron-left"></i>
                     </button>
@@ -64,11 +65,12 @@
             
             <div class="popup-dialog">
                 <div class="page-number-container content">
-                    <div class="user-input">
-                        <input type="number" class="user-value" placeholder="Number of Pages...">            
+                    <div class="input-container">
+                        <div class="user-input">
+                            <input type="number" class="user-value" placeholder="Number of Pages...">            
+                        </div>
+                        <p class="error-message"></p> 
                     </div>
-                    <p class="error-message"></p> 
-                    
                     <button class="prev-button">
                         <i class="fa-solid fa-circle-chevron-left"></i>
                     </button>
@@ -83,10 +85,18 @@
                 <div class="confirm-status content">
                     <p>Have you read this book?</p>
                     <div class="yes-no">
-                        <button class="yes-btn">Yes</button>
-                        <p class="error-message"></p> 
-                        <button class="no-btn">No</button>
-                        <p class="error-message"></p> 
+                        <div class="yes-error">
+                            <button class="yes-btn">Yes</button>
+                            <p class="error-message"></p> 
+                        </div>
+                        
+                        <div class="no-error">
+                            <button class="no-btn">No</button>
+                            <p class="error-message"></p> 
+                        </div>
+                        
+                        
+                        
                     </div>
                     
                     <div class="confirm-button">
