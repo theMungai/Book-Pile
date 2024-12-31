@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/Frontend/images/bookstack.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <title>BookPile</title>
@@ -24,65 +25,73 @@
     </div>
 
     <div class="popup-container">
-        <div class="popup-dialog">
-            <div class="book-title-container content">
-                <div class="user-input">
-                    <input type="text" class="user-value" placeholder="Title of the Book...">       
-                </div>
-
-                <p class="error-message"></p>
-    
-                <button class="next-button">
-                        <i class="fa-solid fa-circle-chevron-right"></i>
-                </button>
-            </div>
+        <div class="content-container">
+            <div class="popup-dialog">
+                <div class="book-title-container content">
+                    <div class="user-input">
+                        <input type="text" class="user-value" placeholder="Title of the Book...">       
+                    </div>
+                    <p class="error-message"></p>
         
-            <div class="author-container content">
-                <div class="user-input">
-                    <input type="text" class="user-value" placeholder="Author...">     
+                    <button class="next-button">
+                            <i class="fa-solid fa-circle-chevron-right"></i>
+                    </button>
                 </div>
-                <p class="error-message"></p>  
-                
-                <button class="prev-button">
-                    <i class="fa-solid fa-circle-chevron-left"></i>
-                </button>
+            </div>    
             
-                <button class="next-button">
-                    <i class="fa-solid fa-circle-chevron-right"></i>
-                </button>
+            <div class="popup-dialog">
+                <div class="author-container content">
+                    <div class="user-input">
+                        <input type="text" class="user-value" placeholder="Author...">     
+                    </div>
+                    <p class="error-message"></p>  
+                    
+                    <button class="prev-button">
+                        <i class="fa-solid fa-circle-chevron-left"></i>
+                    </button>
+                
+                    <button class="next-button">
+                        <i class="fa-solid fa-circle-chevron-right"></i>
+                    </button>
+                </div>
             </div>
             
-            <div class="page-number-container content">
-                <div class="user-input">
-                    <input type="number" class="user-value" placeholder="Number of Pages...">
-                    <p class="error-message"></p>       
-                </div>
+            <div class="popup-dialog">
+                <div class="page-number-container content">
+                    <div class="user-input">
+                        <input type="number" class="user-value" placeholder="Number of Pages...">
+                        <p class="error-message"></p>       
+                    </div>
+                    
+                    <button class="prev-button">
+                        <i class="fa-solid fa-circle-chevron-left"></i>
+                    </button>
                 
-                <button class="prev-button">
-                    <i class="fa-solid fa-circle-chevron-left"></i>
-                </button>
-            
-                <button class="next-button">
-                    <i class="fa-solid fa-circle-chevron-right"></i>
-                </button>
+                    <button class="next-button">
+                        <i class="fa-solid fa-circle-chevron-right"></i>
+                    </button>
+                </div>
             </div>
-            <!-- 
-            <div class="confirm-status content">
-                <p>Have you read this book?</p>
-                <div class="yes-no">
-                    <button class="yes-btn">Yes</button>
-                    <button class="no-btn">No</button>
+            
+            <div class="popup-dialog">
+                <div class="confirm-status content">
+                    <p>Have you read this book?</p>
+                    <div class="yes-no">
+                        <button class="yes-btn">Yes</button>
+                        <button class="no-btn">No</button>
+                    </div>
+                    
+                    <div class="confirm-button">
+                        <button class="add-to-pile">Add Book</button>
+                    </div>
+    
+                    <button class="prev-button">
+                        <i class="fa-solid fa-circle-chevron-left"></i>
+                    </button>
                 </div>
-                
-                <div class="confirm-button">
-                    <button class="add-to-pile">Add Book</button>
-                </div>
-
-                <button class="prev-button">
-                    <i class="fa-solid fa-circle-chevron-left"></i>
-                </button>
-            </div> -->
-        </div>   
+            </div>  
+        </div>
+         
     </div>
 
     <script src="script.js"></script>

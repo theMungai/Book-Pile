@@ -114,16 +114,27 @@ body{
     display: none
 }
 
-.popup-dialog{
+.content-container{
     position: relative;
     left: 50%;
     top: 50%;
+    height: 340px;
+    width: 540px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transform: translate(-50%,-50%);
+    overflow: hidden;
+}
+
+.popup-dialog{
+    position: relative;
+    margin: 0px auto;
     width: 540px;
     height: 340px;
     background-color: var(--dialog-background);
     border-radius: 20px;
-    border: 2px solid red;
+    display: none;
 }
 
 .user-input{
