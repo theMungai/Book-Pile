@@ -137,9 +137,15 @@ body{
     display: none;
 }
 
-
 .displaySlide{
     display: block;
+}
+
+.input-container{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .user-input{
@@ -150,8 +156,7 @@ body{
     border-radius: 10px;
     position: absolute;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%);
 }
 
 .user-input input {
@@ -161,6 +166,7 @@ body{
     font-size: 1rem;
     border:none;
     padding: 15px;
+    position: relative;
 }
 
 .user-input input:focus{
@@ -177,6 +183,7 @@ body{
     color: red;
     font-size: 0.9rem;
     opacity: 0;
+    position: absolute;
 }
 
 /* ==============Removing spin arrows in number input */
