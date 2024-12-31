@@ -40,8 +40,6 @@ document.querySelector(".add-button-1").addEventListener("click", () => {
 const nextButtons = document.querySelectorAll(".next-button");
 nextButtons.forEach((next) => {
     next.addEventListener("click", () => {
-        // dialogs[1].style.display = "block";
-        // dialogs[0].style.display = "none";
         nextSlide()
     })
 })
@@ -52,8 +50,7 @@ let currentSlide = 0;
 const prevButtons = document.querySelectorAll(".prev-button");
 prevButtons.forEach((prev) => {
     prev.addEventListener("click", () => {
-        dialogs[1].style.display = "none";
-        dialogs[0].style.display = "block";
+        prevSlide()
     });
     
 })
@@ -76,5 +73,6 @@ function nextSlide(){
 }
 
 function prevSlide(){
-
+    currentSlide--;
+    showSlide(currentSlide)
 }
