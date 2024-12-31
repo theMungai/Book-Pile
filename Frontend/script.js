@@ -13,26 +13,21 @@ document.querySelector(".add-button-1").addEventListener("click", () => {
 });
 
 
-// Navigating through different inputs
-
-// dialogs.forEach((dialog)=> {
-
-// })
-
 // If the field is not filled, show error message
-// const userInputs = document.querySelectorAll(".user-value");
-// const inputContainer = document.querySelectorAll(".user-input");
+function checkInput(){
+    const userInput = document.querySelectorAll(".user-value");
+    const errorMessages = document.querySelectorAll(".error-message");
 
-// userInputs.forEach((input) => {
-//     inputContainer.forEach((container) => {
-//         const errorMessage = container.querySelector(".error-message");
+    userInput.forEach((input)=> {
+        if(input.value === ""){
+            errorMessages.forEach((message) => {
+                message.style.opacity = 1;
+                message.textContent = "This field is required!" 
+            })
+        }
+    })
+}
 
-//         if(input.value === ""){
-//             errorMessage.style.opacity = 1;
-//             errorMessage.textContent = "This field is required"
-//         }
-//     })
-// });
 
 
 
@@ -41,6 +36,7 @@ const nextButtons = document.querySelectorAll(".next-button");
 nextButtons.forEach((next) => {
     next.addEventListener("click", () => {
         nextSlide()
+        checkInput()
     })
 })
 
