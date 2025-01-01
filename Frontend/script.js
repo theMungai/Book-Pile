@@ -50,9 +50,6 @@ document.querySelector(".add-button-1").addEventListener("click", () => {
     initializeSlide();
 });
 
-
-
-
 // Next Button Functionality
 const nextButtons = document.querySelectorAll(".next-button");
 nextButtons.forEach((next) => {
