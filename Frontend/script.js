@@ -39,21 +39,20 @@ function checkInput(){
         const userInput = container.querySelector(".user-value");
         const errorMessage = container.querySelector(".error-message");
 
-        if(userInput.value.length === 0){
-            dialogs.forEach((dialog) => {
-                dialog.classList.add("js-shake-error");
-            })
-            errorMessage.style.opacity = 1;
-            errorMessage.textContent = "This field is required";
-        }
+        dialogs.forEach((dialog) => {
+            dialog.classList.add("js-shake-error");
 
-        else if(userInput.value.length !== 0){
-            errorMessage.style.opacity = 0;
-
-            dialogs.forEach((dialog) => {
+            if(userInput.value.length === 0){           
+                errorMessage.style.opacity = 1;
+                errorMessage.textContent = "This field is required";
+            }
+    
+            else if(userInput.value.length !== 0){
+                errorMessage.style.opacity = 0;
                 dialog.classList.remove("js-shake-error");
-            })
-        }
+            }
+        })
+        
     })
 }
 
