@@ -4,6 +4,7 @@ const popup = document.querySelector(".popup-container");
 const dialogs = document.querySelectorAll(".popup-dialog");
 const nextButtons = document.querySelectorAll(".next-button");
 const prevButtons = document.querySelectorAll(".prev-button");
+let currentSlide = 0;
 
 function showPopUp(){
     popup.style.display = "block";
@@ -32,22 +33,24 @@ function prevSlide(){
 
 // If the field is not filled, show error message
 function checkInput(){
-    const userInput = document.querySelectorAll(".user-value");
+    // const userInput = document.querySelectorAll(".user-value");
     const inputContainer = document.querySelectorAll(".input-container");
-    const nextButtons = document.querySelectorAll(".next-button");
 
-    userInput.forEach((input)=> {
-        input.focus()
-        if(input.value.length === 0){
-            inputContainer.forEach((container) => {
-                const errorMessage = container.querySelector(".error-message");
-                errorMessage.style.opacity = 1;
-                errorMessage.textContent = "This field is required";   
-            });
+    inputContainer.forEach((container) => {
+        const userInput = container.querySelector(".user-value");
+        const errorMessage = container.querySelector(".error-message");
+        const inputHolder = container.querySelector(".user-input");
 
+        if(userInput.value.length === 0){
+            dialogs.forEach((dialog) => {
+                dialog.classList.add("js-shake-error");
+            })
+            errorMessage.style.opacity = 1;
+            errorMessage.textContent = "This field is required";
         }
-        else if(input.value.length > 0) {
 
+        else if(userInput.value.length > 0){
+            errorMessage.style.opacity = 0;
         }
     })
 }
@@ -77,7 +80,7 @@ document.querySelectorAll(".user-value").forEach((input) => {
 })
 
 
-let currentSlide = 0;
+
 // Previous Button Functionality
 
 prevButtons.forEach((prev) => {
