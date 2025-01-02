@@ -33,15 +33,13 @@ function prevSlide(){
 
 // If the field is not filled, show error message
 function checkInput(){
-    // const userInput = document.querySelectorAll(".user-value");
     const inputContainer = document.querySelectorAll(".input-container");
 
     inputContainer.forEach((container) => {
         const userInput = container.querySelector(".user-value");
         const errorMessage = container.querySelector(".error-message");
-        const inputHolder = container.querySelector(".user-input");
 
-        if(userInput.value.length === 0){
+        if(userInput.value === ""){
             dialogs.forEach((dialog) => {
                 dialog.classList.add("js-shake-error");
             })
@@ -49,8 +47,12 @@ function checkInput(){
             errorMessage.textContent = "This field is required";
         }
 
-        else if(userInput.value.length > 0){
+        else if(userInput.value !== ""){
             errorMessage.style.opacity = 0;
+
+            dialogs.forEach((dialog) => {
+                dialog.classList.remove("js-shake-error");
+            })
         }
     })
 }
