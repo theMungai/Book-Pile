@@ -20,7 +20,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* outline: 2px solid red; */
+    outline: 2px solid red;
 }
 
 body{
@@ -237,14 +237,14 @@ margin: 0;
 
 .confirm-status{
     width: 80%;
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 30px;
 }
 
-.confirm-status p {
+.have-you {
     color: var(--grayish-blue);
     font-size: 1.2rem;
     text-align: center;
@@ -260,8 +260,15 @@ margin: 0;
     align-items: center;
     justify-content: space-between;
     margin: 35px auto;
-    width: 80%;
-    
+    width: 100%;
+    position: relative;
+}
+
+.yes-error,
+.no-error{
+    position: relative;
+    width: 40%;
+    height: 70px;
 }
 
 .yes-no .yes-btn {
@@ -288,6 +295,7 @@ margin: 0;
     border: none;
     padding: 8px 35px;
     border-radius: 10px;
+    float: right;
     cursor: pointer;
     transition: 0.4s;
 }
