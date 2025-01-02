@@ -20,7 +20,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: 2px solid red;
+    /* outline: 2px solid red; */
 }
 
 body{
@@ -267,8 +267,9 @@ margin: 0;
 .yes-error,
 .no-error{
     position: relative;
-    width: 40%;
+    width: 50%;
     height: 70px;
+    border: 5px solid red;
 }
 
 .yes-no .yes-btn {
