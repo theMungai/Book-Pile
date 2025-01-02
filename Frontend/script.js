@@ -39,7 +39,7 @@ function checkInput(){
         const userInput = container.querySelector(".user-value");
         const errorMessage = container.querySelector(".error-message");
 
-        if(userInput.value === ""){
+        if(userInput.value.length === 0){
             dialogs.forEach((dialog) => {
                 dialog.classList.add("js-shake-error");
             })
@@ -47,7 +47,7 @@ function checkInput(){
             errorMessage.textContent = "This field is required";
         }
 
-        else if(userInput.value !== ""){
+        else if(userInput.value.length !== 0){
             errorMessage.style.opacity = 0;
 
             dialogs.forEach((dialog) => {
