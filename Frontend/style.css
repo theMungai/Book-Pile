@@ -39,6 +39,8 @@ body{
     background-color: var(--purple-gray);
     border-radius: 20px;
     padding: 30px;
+    margin: 30px auto;
+    border: 2px solid red;
 }
 
 .header{
@@ -376,6 +378,7 @@ margin: 0;
         width: 100%;
         border-radius: 0px;
         padding: 20px 10px;
+        margin: 0px auto;
     }
     
     .header{
