@@ -108,13 +108,23 @@ cancelButtons.forEach((cancel) => {
 
 
 
+// Toggling Reading status Switch
+
+const bookCards = document.querySelectorAll(".added-books-card");
+bookCards.forEach((card) => {
+    const switchContainer = card.querySelector(".switch")
+    const switchButton = card.querySelector(".switch i");
+
+    
+    switchContainer.addEventListener("click", () => {
+        card.classList.toggle("js-card");
+        switchContainer.classList.toggle("js-switch");
+        switchButton.classList.toggle("switch-status")   
+    })
+})
 
 
-
-
-
-
-
+    
 
 
 const myLibrary = []
