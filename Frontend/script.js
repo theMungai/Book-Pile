@@ -112,20 +112,18 @@ cancelButtons.forEach((cancel) => {
 
 const bookCards = document.querySelectorAll(".added-books-card");
 bookCards.forEach((card) => {
-    const switchContainer = card.querySelector(".switch")
+    const switchContainer = card.querySelector(".switch");
     const switchButton = card.querySelector(".switch i");
+    const statusIndicator = card.querySelector(".status-indicator");
 
-    
     switchContainer.addEventListener("click", () => {
         card.classList.toggle("js-card");
         switchContainer.classList.toggle("js-switch");
-        switchButton.classList.toggle("switch-status")   
+        switchButton.classList.toggle("switch-status");
+        statusIndicator.classList.toggle("js-indicator");
+
     })
 })
-
-
-    
-
 
 const myLibrary = []
 
@@ -133,7 +131,7 @@ const bookTitle = document.querySelector(".js-input-title");
 const bookAuthor = document.querySelector(".js-input-author");
 const bookPages = document.querySelector(".js-input-pages");
 
-function Book(title, author, pages,hasRead){
+function Book(title, author, pages){
     this.title = title;
     this.author = author;
     this.pages = pages;
