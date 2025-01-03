@@ -200,8 +200,8 @@ body{
 
 
 
-.book-status .js-indicator::after{
-    content: " Not";
+.book-status .js-indicator::before{
+    content: "Not ";
 }
 
 .add-button-1{
