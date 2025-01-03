@@ -10,6 +10,10 @@ function showPopUp(){
     popup.style.display = "block";
 }
 
+function hidePopUp(){
+    popup.style.display = "none";
+}
+
 function initializeSlide(){
     dialogs[currentSlide].classList.add("displaySlide")
 }
@@ -96,7 +100,7 @@ prevButtons.forEach((prev) => {
 const cancelButtons = document.querySelectorAll(".cancel");
 cancelButtons.forEach((cancel) => {
     cancel.addEventListener("click", () => {
-        popup.style.display = "none";
+        hidePopUp()
     })
 })
 
@@ -115,14 +119,28 @@ cancelButtons.forEach((cancel) => {
 
 const myLibrary = []
 
-const title = document.querySelector(".js-input-title");
-const author = document.querySelector(".js-input-author");
-const pages = document.querySelector(".js-input-pages")
+const bookTitle = document.querySelector(".js-input-title");
+const bookAuthor = document.querySelector(".js-input-author");
+const bookPages = document.querySelector(".js-input-pages");
 
-function Book(){
-    return
+function Book(title, author, pages,hasRead){
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.hasRead = hasRead;
 }
 
 function addToPile(){
-    
+    const bookToAdd = new Book(bookTitle.value,bookAuthor.value,bookPages.value)
+    myLibrary.push(bookToAdd);
+    console.log(myLibrary)
 }
+
+
+const addBook = document.querySelector(".add-to-pile");
+addBook.addEventListener("click", () => {
+    document.querySelector(".intro-sentence").style.display = "none"
+    console.log(bookTitle.value,bookAuthor.value,bookPages.value)
+    addToPile()
+    hidePopUp()
+})

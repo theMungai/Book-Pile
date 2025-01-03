@@ -21,13 +21,13 @@
     padding: 0;
     box-sizing: border-box;
     /* outline: 2px solid red; */
+    font-family: "Poppins",sans-serif;
 }
 
 body{
     width: 100%;
     height: 100vh;
     background-color:var(--grayish-blue) ;
-    font-family: "Poppins",sans-serif;
     display: grid;
     place-items: center;
     position: relative;
@@ -69,18 +69,101 @@ body{
 }
 
 .books-field{
-    height: 70vh;
+    height: auto;
     background-color: var(--medium-dark);
     border-radius: 20px;
     margin-top: 30px;
     padding: 30px 10px;
     position: relative;
+   
 }
 
-.books-field p{
+.books-field .intro-sentence{
     color: var(--white);
     font-size: 1.1rem;
 }
+
+.added-books-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+.added-books-card {
+    padding: 50px 20px;
+    border-radius: 10px;
+    height: auto;
+    background-color: var(--purple-gray);
+}
+
+.card-display{
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 3fr;
+    row-gap: 1rem;
+}
+
+.divider{
+    margin: 0 auto;
+}
+.user-preference{
+    color: rgba(128, 134, 160, 0.514);
+    font-size: 0.9rem;
+}
+
+.head-card,
+.divider{
+    color: rgba(128, 134, 160, 0.514);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.card-buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    
+}
+
+.card-buttons .remove-book {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid rgba(128, 134, 160, 0.514);
+    border-radius: 50%;
+    color: rgba(128, 134, 160, 0.514);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card-buttons .remove-book:active{
+    transform: scale(1.1);
+}
+
+.card-buttons .switch{
+    width: 50px;
+    height: 20px;
+    border-radius: 50px;
+    border: 1px solid rgba(128, 134, 160, 0.514);
+    background-color: transparent;
+    color: rgba(128, 134, 160, 0.514);
+    position: relative;
+    cursor: pointer;
+}
+
+.card-buttons .switch .fa-solid{
+    font-size: 0.9rem;
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    color: rgba(128, 134, 160, 0.514);
+}
+
 
 .add-button-1{
     width: 80px;
@@ -329,7 +412,8 @@ margin: 0;
         border-radius: 5px;
     }
 
-    .popup-dialog .fa-solid{
+    .prev-button .fa-solid,
+    .next-button .fa-solid{
         font-size: 2.2rem;
     }
     
