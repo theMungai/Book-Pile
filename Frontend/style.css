@@ -97,11 +97,13 @@ body{
     height: auto;
     background-color: var(--purple-gray);
     border: 1px solid var(--minty-green);
+    box-shadow: 5px 5px 10px rgba(54, 181, 122, 0.089);
 }
 
 .js-card{
     transition: 0.5s;
     border: 1px solid #B54936;
+    box-shadow: 5px 5px 10px rgba(181, 73, 54, 0.199);
 }
 
 
