@@ -91,5 +91,38 @@ prevButtons.forEach((prev) => {
     
 });
 
+
+// Cancel Button Functionality
+const cancelButtons = document.querySelectorAll(".cancel");
+cancelButtons.forEach((cancel) => {
+    cancel.addEventListener("click", () => {
+        popup.style.display = "none";
+    })
+})
+
 // Toggling Light and Dark Theme Buttons
 
+
+
+
+
+
+
+
+
+
+
+
+const myLibrary = []
+
+const title = document.querySelector(".js-input-title");
+const author = document.querySelector(".js-input-author");
+const pages = document.querySelector(".js-input-pages")
+
+function Book(){
+    return
+}
+
+function addToPile(){
+    
+}

@@ -31,9 +31,12 @@
         <div class="content-container">
             <div class="popup-dialog">
                 <div class="book-title-container content">
+                    <button class="cancel">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
                     <div class="input-container">
                         <div class="user-input">
-                            <input type="text" class="user-value" placeholder="Title of the Book..." required>       
+                            <input type="text" class="user-value js-input-title" placeholder="Title of the Book..." required>       
                         </div>
                         <p class="error-message"></p>
                     </div>
@@ -47,9 +50,10 @@
             
             <div class="popup-dialog">
                 <div class="author-container content">
+                    <button class="cancel"><i class="fa-solid fa-xmark"></i></button>
                     <div class="input-container">
                         <div class="user-input">
-                            <input type="text" class="user-value" placeholder="Author..." required>    
+                            <input type="text" class="user-value js-input-author" placeholder="Author..." required>    
                         </div>
                         <p class="error-message"></p> 
                     </div>
@@ -65,9 +69,10 @@
             
             <div class="popup-dialog">
                 <div class="page-number-container content">
+                    <button class="cancel"><i class="fa-solid fa-xmark"></i></button>
                     <div class="input-container">
                         <div class="user-input">
-                            <input type="number" class="user-value" placeholder="Number of Pages...">            
+                            <input type="number" class="user-value js-input-pages" placeholder="Number of Pages...">            
                         </div>
                         <p class="error-message"></p> 
                     </div>
@@ -75,9 +80,7 @@
                         <i class="fa-solid fa-circle-chevron-left"></i>
                     </button>
                 
-                    <!-- <button class="next-button">
-                        <i class="fa-solid fa-circle-chevron-right"></i>
-                    </button> -->
+                    <button class="add-to-pile"> Add Book</button>
                 </div>
             </div>
             

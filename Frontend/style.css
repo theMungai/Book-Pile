@@ -132,6 +132,24 @@ body{
     overflow: hidden;
 }
 
+.cancel{
+    margin: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid var(--grayish-blue); 
+    color: var(--grayish-blue);
+    font-size: 1rem; 
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.cancel:hover{
+    color: var(--red-brown);
+    border: 1px solid var(--red-brown);
+}
+
 .popup-dialog{
     position: relative;
     margin: 0px auto;
@@ -231,7 +249,8 @@ margin: 0;
     right: 5%;
 }
 
-.popup-dialog .fa-solid{
+.prev-button .fa-solid,
+.next-button .fa-solid{
     color: var(--input-background);
     font-size: 2.5rem;
     border-radius: 50%;
