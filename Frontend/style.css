@@ -60,13 +60,10 @@ body{
 }
 
 .header img{
-    width: 30px;
+    width: 50px;
     cursor: pointer;
 }
 
-.dark-theme {
-    display: none;
-}
 
 .books-field{
     height: auto;

@@ -87,10 +87,6 @@ cancelButtons.forEach((cancel) => {
     })
 })
 
-// Toggling Light and Dark Theme Buttons
-
-
-
 // Toggling Reading status Switch
 
 function addEventListenerToCard(){
