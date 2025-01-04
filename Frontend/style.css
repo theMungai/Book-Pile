@@ -680,3 +680,99 @@ margin: 0;
     }
     
 }
+
+
+/* ============== Laptops ================ */
+
+@media (min-width : 992px) and (max-width:1199px){
+    body{
+        background-color:var(--grayish-blue) ;
+    }
+    .main-container{
+        width: 80%;
+        height: 100%;
+        border-radius: 20px;
+    }
+    
+    .header{
+        padding:10px;
+        font-size: 1rem;
+        border-radius: 10px;
+    }
+
+    .header img{
+        width: 20px;
+    }
+
+    .books-field{
+        height: auto;
+        border-radius: 10px;
+        margin-top: 10px;
+        padding: 20px 10px;
+    }
+    
+    .books-field .intro-sentence{
+        font-size: 1rem;
+    }
+
+
+    .added-books-container{
+        margin: 30px auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 1rem;
+        width: 100%;
+        height: auto;
+    }
+
+    .added-books-card {
+        padding: 40px 20px;
+        width: 95%;
+        height: auto;
+        margin: 0px auto;
+    }
+
+    .user-preference{
+        font-size: 0.9rem;
+    }
+
+    .card-buttons .remove-book {
+        transition: 0.5s;
+    }
+    
+    
+    .add-button-1{
+        width: 60px;
+        height: 60px;
+        top: 86%;
+        left: 74%;
+    }
+  .add-button-1 .fa-solid {
+        font-size: 2.4rem;
+    }
+
+    .content-container{
+        height: 300px;
+        width: 100%;
+    }
+    
+    .popup-dialog{
+        height: 95%;
+        border-radius: 10px;
+    }
+
+    .input-container{
+        width: 90%;
+    }
+    
+    .user-input{
+        border-radius: 5px;
+    }
+
+    .prev-button .fa-solid,
+    .next-button .fa-solid{
+        font-size: 2.2rem;
+    }
+    
+}
