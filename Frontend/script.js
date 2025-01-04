@@ -113,18 +113,26 @@ cancelButtons.forEach((cancel) => {
 function addEventListenerToCard(){
     const bookCards = document.querySelectorAll(".added-books-card");
     bookCards.forEach((card) => {
-    const switchContainer = card.querySelector(".switch");
-    const switchButton = card.querySelector(".switch i");
-    const statusIndicator = card.querySelector(".status-indicator");
+        const switchContainer = card.querySelector(".switch");
+        const switchButton = card.querySelector(".switch i");
+        const statusIndicator = card.querySelector(".status-indicator");
+        const removeBook = card.querySelector(".remove-book")
 
-    switchContainer.addEventListener("click", () => {
-        card.classList.toggle("js-card");
-        switchContainer.classList.toggle("js-switch");
-        switchButton.classList.toggle("switch-status");
-        statusIndicator.classList.toggle("js-indicator");
+        const cardContainer = document.querySelector(".added-books-container");
+        cardContainer.appendChild(card)
 
-    })
-});
+        switchContainer.addEventListener("click", () => {
+            card.classList.toggle("js-card");
+            switchContainer.classList.toggle("js-switch");
+            switchButton.classList.toggle("switch-status");
+            statusIndicator.classList.toggle("js-indicator");
+
+        });
+
+        removeBook.addEventListener("click", () => {
+            cardContainer.removeChild(card)
+        })
+    });
 }
 
 
