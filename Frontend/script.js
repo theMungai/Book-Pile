@@ -36,28 +36,11 @@ function prevSlide(){
 }
 
 // If the field is not filled, show error message
-function checkInput(){
-    const inputContainer = document.querySelectorAll(".input-container");
-
-    inputContainer.forEach((container) => {
-        const userInput = container.querySelector(".user-value");
-        const errorMessage = container.querySelector(".error-message");
-
-        dialogs.forEach((dialog) => {
-            dialog.classList.add("js-shake-error");
-
-            if(userInput.value.length === 0){           
-                errorMessage.style.opacity = 1;
-                errorMessage.textContent = "This field is required";
-            }
-    
-            else if(userInput.value.length !== 0){
-                errorMessage.style.opacity = 0;
-                dialog.classList.remove("js-shake-error");
-            }
-        })
+function shakeInput(){
+    dialogs.forEach((dialog) => {
+        dialog.classList.add("js-shake-input");
         
-    })
+    }) 
 }
 
 
@@ -70,7 +53,7 @@ document.querySelector(".add-button-1").addEventListener("click", () => {
 nextButtons.forEach((next) => {
     next.addEventListener("click", () => {
         nextSlide();
-        checkInput();
+        shakeInput();
     })
 });
 
