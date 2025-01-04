@@ -110,8 +110,9 @@ cancelButtons.forEach((cancel) => {
 
 // Toggling Reading status Switch
 
-const bookCards = document.querySelectorAll(".added-books-card");
-bookCards.forEach((card) => {
+function addEventListenerToCard(){
+    const bookCards = document.querySelectorAll(".added-books-card");
+    bookCards.forEach((card) => {
     const switchContainer = card.querySelector(".switch");
     const switchButton = card.querySelector(".switch i");
     const statusIndicator = card.querySelector(".status-indicator");
@@ -123,7 +124,10 @@ bookCards.forEach((card) => {
         statusIndicator.classList.toggle("js-indicator");
 
     })
-})
+});
+}
+
+
 
 const myLibrary = []
 
@@ -131,24 +135,62 @@ const bookTitle = document.querySelector(".js-input-title");
 const bookAuthor = document.querySelector(".js-input-author");
 const bookPages = document.querySelector(".js-input-pages");
 
+// Object Constructor
 function Book(title, author, pages){
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.hasRead = hasRead;
 }
 
 function addToPile(){
-    const bookToAdd = new Book(bookTitle.value,bookAuthor.value,bookPages.value)
+    let bookToAdd = new Book(bookTitle.value, bookAuthor.value, bookPages.value);
+    let generatedBookCard = 
+    `
+        <div class="added-books-card">
+            <div class="title card-display">
+                <p class="head-card">Title</p>
+                <p class="divider">:</p>
+                <p class="user-preference">${bookToAdd.title}</p>
+            </div>
+
+            <div class="author card-display">
+                <p class="head-card">Author</p>
+                <p class="divider">:</p>
+                <p class="user-preference">${bookToAdd.author}</p>
+            </div>
+
+            <div class="pages card-display">
+                <p class="head-card">Pages </p>
+                <p class="divider">:</p>
+                <p class="user-preference">${bookToAdd.pages}</p>
+            </div>
+
+            <div class="card-buttons">
+                <button class="remove-book"><i class="fa-solid fa-trash"></i> </button>
+                <div class="book-status">
+                    <p class="status-indicator">Read</p>
+                    <button class="switch"><i class="fa-solid fa-circle"></i></button>
+                </div>
+            </div>
+        </div>
+    `;
+
     myLibrary.push(bookToAdd);
-    console.log(myLibrary)
+
+    document.querySelector(".added-books-container").innerHTML += generatedBookCard;
+
+    addEventListenerToCard()
+
+    // Clear input fields after adding the book
+    bookTitle.value = '';
+    bookAuthor.value = '';
+    bookPages.value = '';
 }
 
 
 const addBook = document.querySelector(".add-to-pile");
 addBook.addEventListener("click", () => {
     document.querySelector(".intro-sentence").style.display = "none"
-    console.log(bookTitle.value,bookAuthor.value,bookPages.value)
     addToPile()
     hidePopUp()
 })

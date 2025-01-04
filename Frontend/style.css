@@ -191,10 +191,12 @@ body{
 
 .book-status .status-indicator{
     color: var(--minty-green);
+    transition: 0.5s;
 }
 
 .book-status .js-indicator{
     color: var(--red-brown);
+    transition: 0.5s;
 }
 
 
