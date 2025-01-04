@@ -380,6 +380,22 @@ margin: 0;
     left: 5%;
 }
 
+.add-to-pile{
+    position: absolute;
+    top: 80%;
+    right: 5%;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    background-color: var(--grayish-blue);
+    transition: 0.5s;
+}
+
+.add-to-pile:hover {
+    transform: scale(0.95);
+}
 
 /* ============== Media Queries ================ */
 /* ============== Mobile Device ================ */
