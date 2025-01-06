@@ -248,7 +248,6 @@ body{
     align-items: center;
     justify-content: center;
     transform: translate(-50%,-50%);
-    border: 2px solid white;
 }
 
 
@@ -293,7 +292,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid red;
 }
 
 .user-input{
@@ -309,7 +307,7 @@ body{
 }
 
 .user-input input {
-    width: 85%;
+    width: 100%;
     background-color: transparent;
     color: var(--grayish-blue);
     font-size: 1.1rem;
@@ -391,7 +389,6 @@ margin: 0;
     height: 40px;
     position: relative;
     margin: 30px 0px;
-    border: 2px solid yellow;
     display: flex;
     justify-content: space-between;
 }
@@ -404,15 +401,14 @@ margin: 0;
     border-radius: 50%;
     position: absolute;
     top: 50%;
-    right: 0%;
-    transform: translate(-50%,-50%);
+    right: 10%;
 }
 
 .prev-button .fa-solid,
 .next-button .fa-solid{
     color: var(--input-background);
     font-size: 2.5rem;
-    position: relative;
+    position: absolute;
 }
 
 .prev-next-container .prev-button{
@@ -423,20 +419,23 @@ margin: 0;
     position: absolute;
     top: 50%;
     left: 5%;
-    transform: translate(-50%,-50%);
 }
 
 .prev-next-container .add-to-pile{
     position: absolute;
     top: 50%;
-    right: 0%;
-    transform: translate(-50%,-50%);
+    right: 5%;
     cursor: pointer;
     border-radius: 10px;
     border: none;
     padding: 10px 20px;
     font-size: 0.95rem;
     background-color: var(--grayish-blue);
+    transition: 0.3s;
+}
+
+.prev-next-container .add-to-pile:active {
+    transform: scale(0.95);
 }
 
 /* ============== Media Queries ================ */
