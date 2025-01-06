@@ -273,7 +273,7 @@ body{
     position: relative;
     margin: 0px auto;
     width: 540px;
-    height: 340px;
+    height: auto;
     background-color: var(--dialog-background);
     border-radius: 20px;
     display: none;
@@ -324,6 +324,37 @@ body{
     font-size: 1.1rem;
 }
 
+.notes-summary{
+    width: 100%;
+    background-color: var(--input-background);
+    color: var(--grayish-blue);
+    border-bottom: 2px solid var(--sky-blue);
+    border-radius: 10px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.notes-summary textarea{
+    width: 100%;
+    background-color: transparent;
+    color: var(--grayish-blue);
+    font-size: 1.1rem;
+    border:none;
+    padding: 15px;
+    position: relative;
+}
+
+.notes-summary textarea:focus{
+    border: none;
+    outline: none;
+}
+
+.notes-summary textarea::placeholder{
+    color: var(--grayish-blue);
+    font-size: 1.1rem;
+}
 
 .js-shake-input{
     animation-name: shake;

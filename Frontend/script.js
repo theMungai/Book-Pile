@@ -85,7 +85,9 @@ cancelButtons.forEach((cancel) => {
     cancel.addEventListener("click", () => {
         hidePopUp()
     })
-})
+});
+
+
 
 // Toggling Reading status Switch
 
@@ -152,6 +154,8 @@ function addToPile(){
                 <p class="user-preference">${bookToAdd.pages}</p>
             </div>
 
+
+
             <div class="card-buttons">
                 <button class="remove-book"><i class="fa-solid fa-trash"></i> </button>
                 <div class="book-status">
@@ -163,6 +167,9 @@ function addToPile(){
     `;
 
     myLibrary.push(bookToAdd);
+
+    localStorage.setItem("added-book", JSON.stringify(bookToAdd));
+    console.log(localStorage.getItem())
 
     document.querySelector(".added-books-container").innerHTML += generatedBookCard;
 

@@ -22,7 +22,35 @@
             <p class="intro-sentence">Add books to your pile...</p>
 
             <div class="added-books-container">
-                
+                <div class="added-books-card">
+                    <div class="title card-display">
+                        <p class="head-card">Title</p>
+                        <p class="divider">:</p>
+                        <p class="user-preference">${bookToAdd.title}</p>
+                    </div>
+        
+                    <div class="author card-display">
+                        <p class="head-card">Author</p>
+                        <p class="divider">:</p>
+                        <p class="user-preference">${bookToAdd.author}</p>
+                    </div>
+        
+                    <div class="pages card-display">
+                        <p class="head-card">Pages </p>
+                        <p class="divider">:</p>
+                        <p class="user-preference">${bookToAdd.pages}</p>
+                    </div>
+        
+        
+        
+                    <div class="card-buttons">
+                        <button class="remove-book"><i class="fa-solid fa-trash"></i> </button>
+                        <div class="book-status">
+                            <p class="status-indicator">Read</p>
+                            <button class="switch"><i class="fa-solid fa-circle"></i></button>
+                        </div>
+                    </div>
+                </div>
             </div>
             
 
@@ -85,10 +113,30 @@
                         <i class="fa-solid fa-circle-chevron-left"></i>
                     </button>
                 
-                    <button class="add-to-pile">  <i class="fa-solid fa-book"></i> Add Book </button>
+                    <button class="next-button">
+                        <i class="fa-solid fa-circle-chevron-right"></i>
+                    </button>
+                    
                 </div>
             </div>
             
+
+            <div class="popup-dialog">
+                <div class="page-number-container content">
+                    <button class="cancel"><i class="fa-solid fa-xmark"></i></button>
+                    <div class="input-container">
+                        <div class="notes-summary">
+                            <textarea name="textarea" id="" placeholder="Book Overview"></textarea>            
+                        </div>
+                        
+                    </div>
+                    <button class="prev-button">
+                        <i class="fa-solid fa-circle-chevron-left"></i>
+                    </button>
+                
+                    <button class="add-to-pile">  <i class="fa-solid fa-book"></i> Add Book </button>
+                </div>
+            </div>
         </div>
          
     </div>
