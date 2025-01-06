@@ -87,11 +87,16 @@ cancelButtons.forEach((cancel) => {
     })
 });
 
+// Text Area Functionality
 const textArea = document.querySelector(".notes-summary textarea");
 textArea.addEventListener("input", () => {
     textArea.style.height = "auto";
     textArea.style.height = (textArea.scrollHeight) + "px"
-})
+});
+
+// Toggling Show More button 
+const showMoreBtn = document.querySelector(".show-more-button");
+
 
 // Toggling Reading status Switch
 
@@ -101,7 +106,9 @@ function addEventListenerToCard(){
         const switchContainer = card.querySelector(".switch");
         const switchButton = card.querySelector(".switch i");
         const statusIndicator = card.querySelector(".status-indicator");
-        const removeBook = card.querySelector(".remove-book")
+        const removeBook = card.querySelector(".remove-book");
+        const showMoreBtn = card.querySelector(".show-more-button");
+
 
         const cardContainer = document.querySelector(".added-books-container");
         cardContainer.appendChild(card)
@@ -114,29 +121,50 @@ function addEventListenerToCard(){
 
         });
 
+        // Delete  BookCard Functionality
         removeBook.addEventListener("click", () => {
             cardContainer.removeChild(card)
+        });
+
+        // Toggling Show More button
+
+        showMoreBtn.addEventListener("click", () => {
+            const userOverview = card.querySelector(".user-book-overview");
+            userOverview.classList.toggle("show-more-over-view")
+
+            if(showMoreBtn.innerText === "Show more..."){
+                showMoreBtn.innerText = "Show less..."
+            }
+            else{
+                showMoreBtn.innerText = "Show more..."
+            }
         })
     });
 }
 
 
+const myLibrary = JSON.parse(localStorage.getItem("books")) || []
 
-const myLibrary = []
+
+function updateLocalStorage(){
+    localStorage.setItem("books", JSON.stringify(myLibrary))
+}
 
 const bookTitle = document.querySelector(".js-input-title");
 const bookAuthor = document.querySelector(".js-input-author");
 const bookPages = document.querySelector(".js-input-pages");
+const bookNotes = document.querySelector(".js-input-notes");
 
 // Object Constructor
-function Book(title, author, pages){
+function Book(title, author, pages,notes){
     this.title = title;
     this.author = author;
     this.pages = pages;
+    this.notes = notes
 }
 
 function addToPile(){
-    let bookToAdd = new Book(bookTitle.value, bookAuthor.value, bookPages.value);
+    let bookToAdd = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookNotes.value);
     let generatedBookCard = 
     `
         <div class="added-books-card">
@@ -158,6 +186,11 @@ function addToPile(){
                 <p class="user-preference">${bookToAdd.pages}</p>
             </div>
 
+            <div class="book-overview ">
+                <p class="head">Book Overview</p>
+                <p class="user-book-overview">${bookToAdd.notes}</p>
+                <button class="show-more-button">Show more...</button>
+            </div>
 
 
             <div class="card-buttons">
@@ -172,8 +205,7 @@ function addToPile(){
 
     myLibrary.push(bookToAdd);
 
-    localStorage.setItem("added-book", JSON.stringify(bookToAdd));
-    console.log(localStorage.getItem())
+    updateLocalStorage()
 
     document.querySelector(".added-books-container").innerHTML += generatedBookCard;
 
@@ -183,6 +215,7 @@ function addToPile(){
     bookTitle.value = '';
     bookAuthor.value = '';
     bookPages.value = '';
+    bookNotes.value = '';
 }
 
 
