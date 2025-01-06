@@ -239,17 +239,18 @@ body{
 }
 
 .content-container{
-    position: absolute;
+    position: relative;
     left: 50%;
     top: 50%;
-    height: 340px;
+    height: auto;
     width: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
     transform: translate(-50%,-50%);
-    overflow: hidden;
+    border: 2px solid white;
 }
+
 
 .cancel{
     margin: 20px;
@@ -273,6 +274,7 @@ body{
     position: relative;
     margin: 0px auto;
     width: 540px;
+    min-height: 340px;
     height: auto;
     background-color: var(--dialog-background);
     border-radius: 20px;
@@ -284,16 +286,18 @@ body{
 }
 
 .input-container{
-    width: 80%;
-    height: 110px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+    width: 100%;
+    height: auto;
+    min-height: 110px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red;
 }
 
 .user-input{
-    width: 100%;
+    width: 80%;
     background-color: var(--input-background);
     color: var(--grayish-blue);
     border-bottom: 2px solid var(--sky-blue);
@@ -321,19 +325,16 @@ body{
 
 .user-input input::placeholder{
     color: var(--grayish-blue);
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .notes-summary{
-    width: 100%;
+    width: 90%;
     background-color: var(--input-background);
     color: var(--grayish-blue);
     border-bottom: 2px solid var(--sky-blue);
     border-radius: 10px;
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%);
+    position: relative;
 }
 
 .notes-summary textarea{
@@ -344,6 +345,7 @@ body{
     border:none;
     padding: 15px;
     position: relative;
+    resize: none;
 }
 
 .notes-summary textarea:focus{
@@ -383,46 +385,58 @@ margin: 0;
 
 /* ===================================================== */
 
-.next-button{
+
+.prev-next-container{
+    width: 100%;
+    height: 40px;
+    position: relative;
+    margin: 30px 0px;
+    border: 2px solid yellow;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.prev-next-container .next-button{
     cursor: pointer;
-    background-color: transparent;
+    background-color: var(--purple-gray);
     border: none;
+    border-radius: 50%;
     position: absolute;
-    top: 80%;
-    right: 5%;
+    top: 50%;
+    right: 0%;
+    transform: translate(-50%,-50%);
 }
 
 .prev-button .fa-solid,
 .next-button .fa-solid{
     color: var(--input-background);
     font-size: 2.5rem;
-    border-radius: 50%;
+    position: relative;
 }
 
-.prev-button{
+.prev-next-container .prev-button{
     cursor: pointer;
-    background-color: transparent;
+    background-color: var(--purple-gray);
     border: none;
+    border-radius: 50%;
     position: absolute;
-    top: 80%;
+    top: 50%;
     left: 5%;
+    transform: translate(-50%,-50%);
 }
 
-.add-to-pile{
+.prev-next-container .add-to-pile{
     position: absolute;
-    top: 80%;
-    right: 5%;
+    top: 50%;
+    right: 0%;
+    transform: translate(-50%,-50%);
     cursor: pointer;
     border-radius: 10px;
     border: none;
     padding: 10px 20px;
     font-size: 0.95rem;
     background-color: var(--grayish-blue);
-    transition: 0.5s;
-}
-
-.add-to-pile:hover {
-    transform: scale(0.95);
 }
 
 /* ============== Media Queries ================ */
@@ -495,27 +509,43 @@ margin: 0;
         top: 86%;
         left: 74%;
     }
-  .add-button-1 .fa-solid {
+    .add-button-1 .fa-solid {
         font-size: 2.4rem;
     }
-
+    
     .content-container{
-        height: 300px;
         width: 100%;
     }
     
     .popup-dialog{
         width: 90%;
-        height: 95%;
         border-radius: 10px;
     }
 
     .input-container{
-        width: 90%;
+        width: 100%;
     }
     
     .user-input{
         border-radius: 5px;
+    }
+
+    .notes-summary{
+        width: 90%;
+        border-radius: 5px;
+    }
+    
+    .notes-summary textarea{
+        font-size: 1rem;
+    }
+    
+    .notes-summary textarea::placeholder{
+        color: var(--grayish-blue);
+        font-size: 1rem;
+    }
+    
+    .prev-next-container{
+        margin: 20px 0px;
     }
 
     .prev-button .fa-solid,
@@ -600,22 +630,38 @@ margin: 0;
     }
 
     .content-container{
-        height: 300px;
         width: 100%;
     }
     
     .popup-dialog{
         width: 90%;
-        height: 95%;
         border-radius: 10px;
     }
 
     .input-container{
-        width: 90%;
+        width: 100%;
     }
     
     .user-input{
         border-radius: 5px;
+    }
+
+    .notes-summary{
+        width: 90%;
+        border-radius: 5px;
+    }
+    
+    .notes-summary textarea{
+        font-size: 1rem;
+    }
+    
+    .notes-summary textarea::placeholder{
+        color: var(--grayish-blue);
+        font-size: 1rem;
+    }
+    
+    .prev-next-container{
+        margin: 20px 0px;
     }
 
     .prev-button .fa-solid,
@@ -695,27 +741,43 @@ margin: 0;
         top: 86%;
         left: 74%;
     }
-  .add-button-1 .fa-solid {
+    .add-button-1 .fa-solid {
         font-size: 2.4rem;
     }
 
     .content-container{
-        height: 300px;
         width: 100%;
     }
     
     .popup-dialog{
         width: 90%;
-        height: 95%;
         border-radius: 10px;
     }
 
     .input-container{
-        width: 90%;
+        width: 100%;
     }
     
     .user-input{
         border-radius: 5px;
+    }
+
+    .notes-summary{
+        width: 90%;
+        border-radius: 5px;
+    }
+    
+    .notes-summary textarea{
+        font-size: 1rem;
+    }
+    
+    .notes-summary textarea::placeholder{
+        color: var(--grayish-blue);
+        font-size: 1rem;
+    }
+    
+    .prev-next-container{
+        margin: 20px 0px;
     }
 
     .prev-button .fa-solid,
@@ -792,26 +854,43 @@ margin: 0;
         top: 86%;
         left: 74%;
     }
-  .add-button-1 .fa-solid {
+    .add-button-1 .fa-solid {
         font-size: 2.4rem;
     }
 
     .content-container{
-        height: 300px;
         width: 100%;
     }
     
     .popup-dialog{
-        height: 95%;
+        width: 90%;
         border-radius: 10px;
     }
 
     .input-container{
-        width: 90%;
+        width: 100%;
     }
     
     .user-input{
         border-radius: 5px;
+    }
+
+    .notes-summary{
+        width: 90%;
+        border-radius: 5px;
+    }
+    
+    .notes-summary textarea{
+        font-size: 1rem;
+    }
+    
+    .notes-summary textarea::placeholder{
+        color: var(--grayish-blue);
+        font-size: 1rem;
+    }
+    
+    .prev-next-container{
+        margin: 20px 0px;
     }
 
     .prev-button .fa-solid,
