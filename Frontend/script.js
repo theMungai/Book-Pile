@@ -67,6 +67,7 @@ document.querySelectorAll(".user-value").forEach((input) => {
 prevButtons.forEach((prev) => {
     prev.addEventListener("click", () => {
         prevSlide()
+        shakeInput();
     });
 });
 
@@ -210,7 +211,7 @@ addBook.addEventListener("click", () => {
 // Render books from localStorage when the page loads
 function renderBooks() {
     const addedBooksContainer = document.querySelector(".added-books-container");
-    addedBooksContainer.innerHTML = ''; // Clear the existing list
+    addedBooksContainer.innerHTML = '';
 
     myLibrary.forEach((book) => {
         const generatedBookCard = `
