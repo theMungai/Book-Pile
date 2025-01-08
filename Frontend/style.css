@@ -100,7 +100,7 @@ body{
 }
 
 .js-card{
-    transition: 0.5s;
+    transition: 0.8s;
     border: 1px solid #B54936;
     box-shadow: 5px 5px 10px rgba(181, 73, 54, 0.199);
 }
@@ -122,7 +122,7 @@ body{
 
 .book-overview{
     margin: 30px 0px;
-    max-width: 100%;
+    width: 100%;
     position: relative;
 }
 
@@ -135,12 +135,12 @@ body{
 .book-overview .user-book-overview{
     display: none;
     color: var(--white);
-    position: relative;
-    max-width: 300px;
 }
 
 .book-overview .show-more-over-view{
-    display: block;   
+    display: block;
+    width: 100%;
+    height: auto; 
 }
 
 .book-overview .show-more-button{

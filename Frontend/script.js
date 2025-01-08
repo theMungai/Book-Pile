@@ -35,14 +35,11 @@ function prevSlide(){
     showSlide(currentSlide)
 }
 
-// If the field is not filled, show error message
 function shakeInput(){
     dialogs.forEach((dialog) => {
         dialog.classList.add("js-shake-input");
-        
     }) 
 }
-
 
 document.querySelector(".add-button-1").addEventListener("click", () => {
     showPopUp();
@@ -67,17 +64,12 @@ document.querySelectorAll(".user-value").forEach((input) => {
     })
 })
 
-
-
 // Previous Button Functionality
-
 prevButtons.forEach((prev) => {
     prev.addEventListener("click", () => {
         prevSlide()
     });
-    
 });
-
 
 // Cancel Button Functionality
 const cancelButtons = document.querySelectorAll(".cancel");
@@ -97,9 +89,7 @@ textArea.addEventListener("input", () => {
 // Toggling Show More button 
 const showMoreBtn = document.querySelector(".show-more-button");
 
-
 // Toggling Reading status Switch
-
 function addEventListenerToCard(){
     const bookCards = document.querySelectorAll(".added-books-card");
     bookCards.forEach((card) => {
@@ -109,7 +99,6 @@ function addEventListenerToCard(){
         const removeBook = card.querySelector(".remove-book");
         const showMoreBtn = card.querySelector(".show-more-button");
 
-
         const cardContainer = document.querySelector(".added-books-container");
         cardContainer.appendChild(card)
 
@@ -118,19 +107,17 @@ function addEventListenerToCard(){
             switchContainer.classList.toggle("js-switch");
             switchButton.classList.toggle("switch-status");
             statusIndicator.classList.toggle("js-indicator");
-
         });
 
-        // Delete  BookCard Functionality
+        // Delete BookCard Functionality
         removeBook.addEventListener("click", () => {
             cardContainer.removeChild(card)
         });
 
         // Toggling Show More button
-
         showMoreBtn.addEventListener("click", () => {
             const userOverview = card.querySelector(".user-book-overview");
-            userOverview.classList.toggle("show-more-over-view")
+            userOverview.classList.toggle("show-more-over-view");
 
             if(showMoreBtn.innerText === "Show more..."){
                 showMoreBtn.innerText = "Show less..."
@@ -142,31 +129,27 @@ function addEventListenerToCard(){
     });
 }
 
+// Retrieve books from localStorage or initialize an empty array
+const myLibrary = JSON.parse(localStorage.getItem("books")) || [];
 
-const myLibrary = JSON.parse(localStorage.getItem("books")) || []
-
-
-function updateLocalStorage(){
-    localStorage.setItem("books", JSON.stringify(myLibrary))
-}
-
+// Book Input Fields
 const bookTitle = document.querySelector(".js-input-title");
 const bookAuthor = document.querySelector(".js-input-author");
 const bookPages = document.querySelector(".js-input-pages");
 const bookNotes = document.querySelector(".js-input-notes");
 
 // Object Constructor
-function Book(title, author, pages,notes){
+function Book(title, author, pages, notes){
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.notes = notes
 }
 
+// Add book to the library and update the DOM
 function addToPile(){
     let bookToAdd = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookNotes.value);
-    let generatedBookCard = 
-    `
+    let generatedBookCard = `
         <div class="added-books-card">
             <div class="title card-display">
                 <p class="head-card">Title</p>
@@ -181,7 +164,7 @@ function addToPile(){
             </div>
 
             <div class="pages card-display">
-                <p class="head-card">Pages </p>
+                <p class="head-card">Pages</p>
                 <p class="divider">:</p>
                 <p class="user-preference">${bookToAdd.pages}</p>
             </div>
@@ -191,7 +174,6 @@ function addToPile(){
                 <p class="user-book-overview">${bookToAdd.notes}</p>
                 <button class="show-more-button">Show more...</button>
             </div>
-
 
             <div class="card-buttons">
                 <button class="remove-book"><i class="fa-solid fa-trash"></i> </button>
@@ -204,12 +186,11 @@ function addToPile(){
     `;
 
     myLibrary.push(bookToAdd);
-
-    updateLocalStorage()
+    localStorage.setItem("books", JSON.stringify(myLibrary));
 
     document.querySelector(".added-books-container").innerHTML += generatedBookCard;
 
-    addEventListenerToCard()
+    addEventListenerToCard(); // Add event listeners to the new card
 
     // Clear input fields after adding the book
     bookTitle.value = '';
@@ -218,10 +199,63 @@ function addToPile(){
     bookNotes.value = '';
 }
 
-
+// Event listener for the "Add Book" button
 const addBook = document.querySelector(".add-to-pile");
 addBook.addEventListener("click", () => {
-    document.querySelector(".intro-sentence").style.display = "none"
-    addToPile()
-    hidePopUp()
-})
+    document.querySelector(".intro-sentence").style.display = "none";
+    addToPile();
+    hidePopUp();
+});
+
+// Render books from localStorage when the page loads
+function renderBooks() {
+    const addedBooksContainer = document.querySelector(".added-books-container");
+    addedBooksContainer.innerHTML = ''; // Clear the existing list
+
+    myLibrary.forEach((book) => {
+        const generatedBookCard = `
+            <div class="added-books-card">
+                <div class="title card-display">
+                    <p class="head-card">Title</p>
+                    <p class="divider">:</p>
+                    <p class="user-preference">${book.title}</p>
+                </div>
+
+                <div class="author card-display">
+                    <p class="head-card">Author</p>
+                    <p class="divider">:</p>
+                    <p class="user-preference">${book.author}</p>
+                </div>
+
+                <div class="pages card-display">
+                    <p class="head-card">Pages</p>
+                    <p class="divider">:</p>
+                    <p class="user-preference">${book.pages}</p>
+                </div>
+
+                <div class="book-overview ">
+                    <p class="head">Book Overview</p>
+                    <p class="user-book-overview">${book.notes}</p>
+                    <button class="show-more-button">Show more...</button>
+                </div>
+
+                <div class="card-buttons">
+                    <button class="remove-book"><i class="fa-solid fa-trash"></i></button>
+                    <div class="book-status">
+                        <p class="status-indicator">Read</p>
+                        <button class="switch"><i class="fa-solid fa-circle"></i></button>
+                    </div>
+                </div>
+            </div>
+        `;
+        addedBooksContainer.innerHTML += generatedBookCard;
+    });
+
+    // Add event listeners to newly rendered books
+    addEventListenerToCard();
+}
+
+// Call renderBooks when the page loads to display the books
+document.addEventListener("DOMContentLoaded", () => {
+    renderBooks(); // Render books stored in localStorage
+});
