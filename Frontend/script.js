@@ -202,6 +202,7 @@ function addToPile(){
 // Event listener for the "Add Book" button
 const addBook = document.querySelector(".add-to-pile");
 addBook.addEventListener("click", () => {
+    window.location.reload(true)
     document.querySelector(".intro-sentence").style.display = "none";
     addToPile();
     hidePopUp();
@@ -251,11 +252,9 @@ function renderBooks() {
         addedBooksContainer.innerHTML += generatedBookCard;
     });
 
-    // Add event listeners to newly rendered books
     addEventListenerToCard();
 }
 
-// Call renderBooks when the page loads to display the books
 document.addEventListener("DOMContentLoaded", () => {
-    renderBooks(); // Render books stored in localStorage
+    renderBooks(); 
 });
