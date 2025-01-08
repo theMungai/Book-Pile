@@ -59,7 +59,6 @@ document.querySelectorAll(".user-value").forEach((input) => {
     input.addEventListener("keydown", (event) => {
         if(event.key === "Enter"){
             nextSlide();
-            checkInput();
         }
     })
 })
@@ -132,7 +131,7 @@ function addEventListenerToCard(){
 // Retrieve books from localStorage or initialize an empty array
 const myLibrary = JSON.parse(localStorage.getItem("books")) || [];
 
-// Book Input Fields
+
 const bookTitle = document.querySelector(".js-input-title");
 const bookAuthor = document.querySelector(".js-input-author");
 const bookPages = document.querySelector(".js-input-pages");
@@ -146,7 +145,7 @@ function Book(title, author, pages, notes){
     this.notes = notes
 }
 
-// Add book to the library and update the DOM
+
 function addToPile(){
     let bookToAdd = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookNotes.value);
     let generatedBookCard = `
