@@ -86,9 +86,6 @@ textArea.addEventListener("input", () => {
     textArea.style.height = (textArea.scrollHeight) + "px"
 });
 
-// Toggling Show More button 
-const showMoreBtn = document.querySelector(".show-more-button");
-
 // Toggling Reading status Switch
 function addEventListenerToCard(){
     const bookCards = document.querySelectorAll(".added-books-card");
@@ -129,7 +126,7 @@ function addEventListenerToCard(){
     });
 }
 
-// Retrieve books from localStorage or initialize an empty array
+// Retrieve books from localStorage 
 const myLibrary = JSON.parse(localStorage.getItem("books")) || [];
 
 
