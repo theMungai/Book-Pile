@@ -187,7 +187,7 @@ function addToPile(){
 
     document.querySelector(".added-books-container").innerHTML += generatedBookCard;
 
-    addEventListenerToCard(); // Add event listeners to the new card
+    addEventListenerToCard();
 
     // Clear input fields after adding the book
     bookTitle.value = '';
