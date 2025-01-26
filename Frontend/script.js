@@ -136,11 +136,20 @@ const bookPages = document.querySelector(".js-input-pages");
 const bookNotes = document.querySelector(".js-input-notes");
 
 // Object Constructor
-function Book(title, author, pages, notes){
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.notes = notes
+// function Book(title, author, pages, notes){
+//     this.title = title;
+//     this.author = author;
+//     this.pages = pages;
+//     this.notes = notes
+// }
+
+class Book {
+    constructor(title, author, pages, notes){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.notes = notes
+    }
 }
 
 
