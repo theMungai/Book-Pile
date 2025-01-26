@@ -88,6 +88,33 @@ body{
     height: 100%;
 }
 
+/* =================== Styling the Scrollbars =============== */
+::-webkit-scrollbar {
+    width: 8px;  
+  }
+  
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--purple-gray);
+    border-radius: 10px;
+  }
+  
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--input-background);
+    border-radius: 10px;
+  }
+  
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--grayish-blue);
+  }
+  
+ 
+  ::-webkit-scrollbar-corner {
+    background-color: inherit;
+  }
+
 .added-books-card {
     padding: 50px 20px;
     border-radius: 10px;
@@ -98,6 +125,7 @@ body{
     box-shadow: 5px 5px 10px rgba(54, 181, 122, 0.089);
     position: relative;
     overflow-y: scroll;
+    overflow: auto;
 }
 
 .js-card{
@@ -310,6 +338,7 @@ body{
     border-radius: 20px;
     display: none;
     overflow-y: scroll;
+    overflow: auto;
 }
 
 .displaySlide{
