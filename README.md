@@ -13,6 +13,9 @@ BookPile is a simple web application designed to help users keep track of the bo
 - **CSS**: For styling and making the app responsive to all devices.
 - **JavaScript**: For interactive features, such as updating book statuses and dynamically adding/removing books.
 
+## Live Demo
+You can access the live version of the app hosted on Vercel here:  
+[BookPile Live Demo](https://book-pile.vercel.app/)
 
 ## Usage
 
