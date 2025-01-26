@@ -91,12 +91,13 @@ body{
 .added-books-card {
     padding: 50px 20px;
     border-radius: 10px;
-    height: auto;
+    max-height: 40vh;
     width: 100%;
     background-color: var(--purple-gray);
     border: 1px solid var(--minty-green);
     box-shadow: 5px 5px 10px rgba(54, 181, 122, 0.089);
     position: relative;
+    
 }
 
 .js-card{
@@ -300,14 +301,15 @@ body{
 }
 
 .popup-dialog{
-    position: relative;
+    position: absolute;
     margin: 0px auto;
     width: 540px;
-    min-height: 340px;
+    max-height: 60vh;
     height: auto;
     background-color: var(--dialog-background);
     border-radius: 20px;
     display: none;
+    overflow-y: scroll;
 }
 
 .displaySlide{
