@@ -97,7 +97,7 @@ body{
     border: 1px solid var(--minty-green);
     box-shadow: 5px 5px 10px rgba(54, 181, 122, 0.089);
     position: relative;
-    
+    overflow-y: scroll;
 }
 
 .js-card{
