@@ -106,11 +106,6 @@ function addEventListenerToCard(){
             statusIndicator.classList.toggle("js-indicator");
         });
 
-        // Delete BookCard Functionality
-        removeBook.addEventListener("click", () => {
-            cardContainer.removeChild(card)
-        });
-
         // Toggling Show More button
         showMoreBtn.addEventListener("click", () => {
             const userOverview = card.querySelector(".user-book-overview");
@@ -153,7 +148,7 @@ class Book {
 }
 
 
-function addToPile(){
+function addToPile(index){
     let bookToAdd = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookNotes.value);
     let generatedBookCard = `
         <div class="added-books-card">
@@ -205,6 +200,12 @@ function addToPile(){
     bookNotes.value = '';
 }
 
+function deleteBook(index){
+    myLibrary.splice(index,1)
+    localStorage.setItem("books", JSON.stringify(myLibrary));
+    renderBooks()
+}
+
 // Event listener for the "Add Book" button
 const addBook = document.querySelector(".add-to-pile");
 addBook.addEventListener("click", () => {
@@ -219,7 +220,7 @@ function renderBooks() {
     const addedBooksContainer = document.querySelector(".added-books-container");
     addedBooksContainer.innerHTML = '';
 
-    myLibrary.forEach((book) => {
+    myLibrary.forEach((book,index) => {
         const generatedBookCard = `
             <div class="added-books-card">
                 <div class="title card-display">
@@ -247,7 +248,7 @@ function renderBooks() {
                 </div>
 
                 <div class="card-buttons">
-                    <button class="remove-book"><i class="fa-solid fa-trash"></i></button>
+                    <button class="remove-book" data-index = "${index}"><i class="fa-solid fa-trash"></i></button>
                     <div class="book-status">
                         <p class="status-indicator">Read</p>
                         <button class="switch"><i class="fa-solid fa-circle"></i></button>
@@ -257,6 +258,13 @@ function renderBooks() {
         `;
         addedBooksContainer.innerHTML += generatedBookCard;
     });
+
+    document.querySelectorAll(".remove-book").forEach((button) => {
+        button.addEventListener("click", () => {
+            const index = button.dataset.index
+            deleteBook(index)
+        })
+    })
 
     addEventListenerToCard();
 }
